@@ -78,8 +78,8 @@ console.log('List after removing first element: ', myLinkedList);
 myLinkedList.shift()
 console.log('List after removing both element: ', myLinkedList);
 
-myLinkedList.shift()
-console.log('List when head is already null: ', undefined);
+let result3 = myLinkedList.shift()
+console.log('List when head is already null: ', result3);
 
 /*
     In this code first created list of two elements. and then checked all three condition 

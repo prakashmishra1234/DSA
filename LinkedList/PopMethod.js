@@ -55,8 +55,8 @@ console.log('Linked list after removing item: ',myLinkedList);
 myLinkedList.pop()
 console.log('Linked list after removing all items: ',myLinkedList);
 
-myLinkedList.pop()
-console.log('Linked list when 0 item is present: ',undefined);
+let result = myLinkedList.pop()
+console.log('Linked list when 0 item is present: ',result);
 
 /* 
     In the above code first the push method is used to creat a list of 2 items and the checked all three condition 
