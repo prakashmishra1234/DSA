@@ -1,3 +1,5 @@
+//Linked list constructor 
+
 class Node {
     constructor(value){
         this.value = value
