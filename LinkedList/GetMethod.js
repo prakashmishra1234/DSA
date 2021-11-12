@@ -1,4 +1,4 @@
-//Linked list Unshift method
+//Linked list get method 
 
 class Node {
     constructor(value){
@@ -55,18 +55,37 @@ class LinkedList {
         this.length++
         return this
     }
+    shift(){
+        if(!this.head) return undefined;
+        let temp = this.head
+        this.head = this.head.next
+        temp.next = null
+        this.length--
+        if(this.length === 0){
+            this.tail = null
+        }
+        temp.next = null
+        return temp;
+    }
+    get(index){
+        if(index < 0 || index >= this.length) return undefined
+        let temp = this.head
+        for (let i = 0; i < index; i++){
+            temp = temp.next
+        }
+        return temp
+    }
 }
 
-let myLinkedList = new LinkedList(11)
-myLinkedList.push(3)
-myLinkedList.push(23)
-myLinkedList.push(7)
-console.log('original Linked List: ',myLinkedList);
+let myLinkedList = new LinkedList(0)
+    myLinkedList.push(1)
+    myLinkedList.push(2)
+    myLinkedList.push(3)
+console.log("The required list is: ",myLinkedList)
 
-myLinkedList.unshift(4)
-console.log('new Linked List: ',myLinkedList)
+let result = myLinkedList.get(2);
+console.log('The item at index 2 is: ',result);
 
 /*
-    In the above code 4 is added to the linked list and return the new list where head is shifted to 4 and 
-    total items increases by 1
+    In this code fist creating a linked list of 4 index and then finding the value of index at index value 2
 */

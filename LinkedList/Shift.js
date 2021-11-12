@@ -1,4 +1,4 @@
-//Linked list Unshift method
+//Linked list shift method 
 
 class Node {
     constructor(value){
@@ -55,18 +55,35 @@ class LinkedList {
         this.length++
         return this
     }
+    shift(){
+        if(!this.head) return undefined;
+        let temp = this.head
+        this.head = this.head.next
+        temp.next = null
+        this.length--
+        if(this.length === 0){
+            this.tail = null
+        }
+        return temp;
+    }
 }
 
-let myLinkedList = new LinkedList(11)
-myLinkedList.push(3)
-myLinkedList.push(23)
-myLinkedList.push(7)
-console.log('original Linked List: ',myLinkedList);
+let myLinkedList = new LinkedList(1)
+myLinkedList.push(2)
+console.log(myLinkedList)
 
-myLinkedList.unshift(4)
-console.log('new Linked List: ',myLinkedList)
+myLinkedList.shift()
+console.log('List after removing first element: ', myLinkedList);
+
+myLinkedList.shift()
+console.log('List after removing both element: ', myLinkedList);
+
+myLinkedList.shift()
+console.log('List when head is already null: ', undefined);
 
 /*
-    In the above code 4 is added to the linked list and return the new list where head is shifted to 4 and 
-    total items increases by 1
+    In this code first created list of two elements. and then checked all three condition 
+    when the list is emplty when we have only one item in the list and when we have more than one 
+    item in the list
 */
+
