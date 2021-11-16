@@ -107,6 +107,21 @@ class DoublyLinkedList {
         this.length++
         return true
     }
+    remove(index) {
+        if(index === 0) return this.shift()
+        if(index === this.length - 1) return this.pop()
+        if(index < 0 || index >= this.length) return undefined
+
+        const temp = this.get(index)
+
+        temp.prev.next = temp.next
+        temp.next.prev = temp.prev
+        temp.next = null
+        temp.prev = null
+
+        this.length--
+        return temp
+    }
 }
 
 let myDoublyLinkedList = new DoublyLinkedList(1)
@@ -114,5 +129,5 @@ myDoublyLinkedList.push(2)
 myDoublyLinkedList.push(3)
 console.log('Original Doubly Linked List: ',myDoublyLinkedList)
 
-myDoublyLinkedList.insert(2, 99)
+myDoublyLinkedList.remove(2, 3)
 console.log('new doubly linked list is: ', myDoublyLinkedList);

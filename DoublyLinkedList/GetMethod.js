@@ -1,4 +1,4 @@
-//Doubly Linked list Push method
+//Doubly Linked list Get method
 
 class Node {
     constructor(value){
