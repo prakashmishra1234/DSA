@@ -24,12 +24,27 @@ class Queue {
         this.length++
         return this
     }
+    dequeue(){
+        if (this.length === 0) return undefined
+        let temp = this.first
+        if(this.length === 1){
+            this.first = null
+            this.last = null
+        }else{
+            this.first = this.first.next
+            temp.next = null
+        }
+        this.length--
+        return temp
+    }
 }
 
 let myQueue = new Queue(4)
-console.log('Old queues:- ', myQueue)
-
 myQueue.enqueue(7)
-console.log('new queue:- ', myQueue)
+myQueue.enqueue(23)
+console.log('Old queue:- ', myQueue)
+
+myQueue.dequeue()
+console.log('New Queue:- ', myQueue)
 
 
