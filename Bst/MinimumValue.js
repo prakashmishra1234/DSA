@@ -47,6 +47,12 @@ class BST{
         }
         return false
     }
+    minValueNode(CurrentNode){
+        while (CurrentNode.left != null){
+            CurrentNode = CurrentNode.left
+        }
+        return CurrentNode
+    }
 }
 
 let myTree = new BST()
@@ -56,12 +62,10 @@ myTree.insert(76)
 myTree.insert(18)
 myTree.insert(52)
 myTree.insert(82)
-//console.log("The previous tree is: ",myTree)
 myTree.insert(27)
-//console.log("The new tree is: ",myTree)
 
-let searchedValue = myTree.contains(88)
-console.log(searchedValue)
+let MinValue = myTree.minValueNode(myTree.root)
+console.log(MinValue)
 
 
 
