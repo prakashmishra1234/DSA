@@ -1,7 +1,11 @@
-var a = 6;
+//Sum within array
 
-console.log("++a is ", ++a);
-console.log("current value of a", a);
-console.log("a++ is ", a++);
-console.log("Now current value of a", a);
+function sumInArray() {
+    for (let i = 0; i < Array.length; i++) {
+        let result = i + Array[i + 1]
+        console.log(`${result}`)
+    }
+}
+let arr = [2, 4, 5, 6, 7];
+sumInArray(arr);
 
