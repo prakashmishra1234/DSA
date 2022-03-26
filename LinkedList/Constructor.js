@@ -1,7 +1,7 @@
 //Linked list constructor 
 
 class Node {
-    constructor(value){
+    constructor(value) {
         this.value = value
         this.next = null
     }
@@ -18,6 +18,7 @@ class LinkedList {
 
 let myLinkedList = new LinkedList(4)
 console.log(myLinkedList)
+console.log(myLinkedList.length);
 
 /*
 In the above code line 17 calls the class linkedlist and the new keyword calls
